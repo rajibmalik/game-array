@@ -16,10 +16,6 @@ const sessionRouter = require('../routes/sessionRouter');
 function createServer() {
   const app = express();
 
-  // Set up view engine
-  app.set('view engine', 'ejs');
-  app.set('views', `${__dirname}/views`);
-
   const allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:5173',
