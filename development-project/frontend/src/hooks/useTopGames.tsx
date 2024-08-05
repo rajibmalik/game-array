@@ -24,7 +24,7 @@ const useTopGames = () => {
 
       axios
         .get<fetchTopGamesResponse>(
-          `http://localhost:3000/api/v1/usergames/top-10-by-playtime/${userData.steamID}`,
+          `api/v1/usergames/top-10-by-playtime/${userData.steamID}`,
           {
             signal: controller.signal,
             withCredentials: true,
