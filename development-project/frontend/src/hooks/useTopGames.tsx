@@ -24,7 +24,7 @@ const useTopGames = () => {
 
       axios
         .get<fetchTopGamesResponse>(
-          `/api/v1/usergames/top-10-by-playtime/${userData.steamID}`,
+          `https://game-array.onrender.com/api/v1/usergames/top-10-by-playtime/${userData.steamID}`,
           {
             signal: controller.signal,
             withCredentials: true,

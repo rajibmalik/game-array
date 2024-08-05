@@ -30,7 +30,7 @@ const useTopGenres = () => {
 
       axios
         .get<fetchDashboardDataResponse>(
-          `/api/v1/usergames/top-genres-by-playtime/${userData.steamID}/6`,
+          `https://game-array.onrender.com/api/v1/usergames/top-genres-by-playtime/${userData.steamID}/6`,
           {
             signal: controller.signal,
             withCredentials: true,

@@ -17,10 +17,13 @@ const useSessionData = () => {
     setIsLoading(true);
 
     axios
-      .get<{ user: UserData }>("/api/v1/session", {
-        signal: controller.signal,
-        withCredentials: true,
-      })
+      .get<{ user: UserData }>(
+        "https://game-array.onrender.com/api/v1/session",
+        {
+          signal: controller.signal,
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         // Sets userData to user session object, created in Passport.js in Express backend
         setUserData(res.data.user);

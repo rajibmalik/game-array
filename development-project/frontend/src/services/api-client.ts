@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "api/v1",
+  baseURL: "https://game-array.onrender.comapi/v1",
 });
