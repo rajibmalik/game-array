@@ -8,11 +8,16 @@ const initiateSteamAuth = passport.authenticate('steam');
 
 // Middleware handling Steam authentication callback
 // Upon successful authentication, redirects to '/account' page
-exports.steamAuthCallback = (req, res) => {
+const steamAuthCallback = (req, res) => {
   passport.authenticate('steam', { failureRedirect: '/' })(req, res, () => {
     console.log('Steam Authentication successful');
 
     // Redirect to the account route to initialise Steam API queries
     res.redirect('/account');
   });
+};
+
+module.exports = {
+  initiateSteamAuth,
+  steamAuthCallback,
 };
