@@ -14,7 +14,7 @@ function App() {
           <Route index element={<Homepage />} />
           <Route path="/library" element={<Library />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/auth/steam/callback" element={<AuthCallback />} /> //
+          {/* <Route path="/auth/steam/callback" element={<AuthCallback />} /> // */}
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
