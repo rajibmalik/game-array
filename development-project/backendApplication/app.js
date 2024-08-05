@@ -14,7 +14,9 @@ mongoose
     console.log('MongoDB connection error:', err.message);
   });
 
+const port = process.env.PORT || 3000;
+
 // Initiates server
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
   console.log(`App running on port ${process.env.PORT}!`);
 });

@@ -20,10 +20,22 @@ function createServer() {
   app.set('view engine', 'ejs');
   app.set('views', `${__dirname}/views`);
 
+  const allowedOrigins = [
+    'http://localhost:3000',
+    'http://localhost:5173',
+    process.env.VERCEL_FRONTEND_URL,
+  ];
+
   // Enable CORS
   app.use(
     cors({
-      origin: ['http://localhost:3000', 'http://localhost:5173'],
+      origin: function (origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+          callback(null, true);
+        } else {
+          callback(new Error('Not allowed by CORS'));
+        }
+      },
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
       credentials: true,
     }),
