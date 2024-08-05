@@ -9,7 +9,9 @@ const AuthButton = () => {
       bgColor="#17252A"
       variant={"solid"}
       size={"lg"}
-      onClick={() => (window.location.href = "/auth/steam")}
+      onClick={() =>
+        (window.location.href = "https://game-array.onrender.com/auth/steam")
+      }
       _hover={{ bgColor: "#17252A" }}
       p={10}
     >
