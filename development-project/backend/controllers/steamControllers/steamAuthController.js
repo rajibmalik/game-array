@@ -12,16 +12,7 @@ exports.steamAuthCallback = (req, res) => {
   passport.authenticate('steam', { failureRedirect: '/' })(req, res, () => {
     console.log('Steam Authentication successful');
 
-    // Send a success response with user data
-    res.status(200).json({
-      status: 'success',
-      message: 'Authentication successful',
-      user: req.user,
-    });
+    // Redirect to the account route to initialise Steam API queries
+    res.redirect('/account');
   });
 };
-
-// module.exports = {
-//   initiateSteamAuth,
-//   steamAuthCallback,
-// };
