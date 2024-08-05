@@ -15,9 +15,8 @@ passport.use(
   // SteamStrategy passes identifier, profile and done to the anonymous callback function
   new SteamStrategy(
     {
-      returnURL: 'http://localhost:3000/auth/steam/callback',
-      // returnURL: 'http://localhost:5173/auth/steam',
-      realm: 'http://localhost:3000/',
+      returnURL: 'https://game-array.onrender.com/auth/steam/callback',
+      realm: 'https://game-array.onrender.com',
       apiKey: process.env.STEAM_API_KEY,
     },
     (identifier, profile, done) => {
