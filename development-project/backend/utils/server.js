@@ -20,8 +20,7 @@ function createServer() {
     'http://localhost:3000',
     'http://localhost:5173',
     'https://game-array.onrender.com',
-
-    process.env.VERCEL_FRONTEND_URL,
+    'https://game-array.vercel.app',
   ];
 
   // Enable CORS
