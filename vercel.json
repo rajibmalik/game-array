@@ -8,5 +8,23 @@
         "distDir": "dist"
       }
     }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/development-project/frontend/dist/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/development-project/frontend/dist/favicon.ico"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/development-project/frontend/dist/manifest.json"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/development-project/frontend/dist/index.html"
+    }
   ]
 }

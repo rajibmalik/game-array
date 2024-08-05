@@ -6,7 +6,7 @@ const LogOutButton = () => {
   const navigate = useNavigate();
   const handleLogOut = async () => {
     apiClient
-      .post("https://game-array.onrender.com/session/logout")
+      .post("/session/logout")
       .then(() => {
         localStorage.removeItem("userToken");
         navigate("/");
