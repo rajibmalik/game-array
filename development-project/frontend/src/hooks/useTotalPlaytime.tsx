@@ -24,7 +24,7 @@ const useTotalPlaytime = () => {
 
       axios
         .get<FetchTotalPlaytimeResponse>(
-          `api/v1/usergames/total-playtime/${userData.steamID}`,
+          `/api/v1/usergames/total-playtime/${userData.steamID}`,
           {
             signal: controller.signal,
             withCredentials: true,

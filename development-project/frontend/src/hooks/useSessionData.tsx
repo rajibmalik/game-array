@@ -17,7 +17,7 @@ const useSessionData = () => {
     setIsLoading(true);
 
     axios
-      .get<{ user: UserData }>("api/v1/session", {
+      .get<{ user: UserData }>("/api/v1/session", {
         signal: controller.signal,
         withCredentials: true,
       })
