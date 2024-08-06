@@ -48,7 +48,6 @@ function createServer() {
       cookie: {
         maxAge: 1 * 60 * 60 * 24 * 1000,
         secure: process.env.NODE_ENV === 'production', // Set to true if using HTTPS
-        sameSite: 'lax', // 'lax' or 'strict' based on your needs
       },
     }),
   );
