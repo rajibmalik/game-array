@@ -47,7 +47,6 @@ function createServer() {
       saveUninitialized: false,
       cookie: {
         maxAge: 1 * 60 * 60 * 24 * 1000,
-        secure: process.env.NODE_ENV === 'production', // True as using HTTPS in production
       },
     }),
   );
