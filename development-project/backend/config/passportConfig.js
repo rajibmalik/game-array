@@ -1,4 +1,5 @@
 const passport = require('passport');
+const User = require('../models/userModel');
 const SteamStrategy = require('passport-steam').Strategy;
 require('dotenv').config();
 
@@ -20,11 +21,22 @@ passport.use(
       apiKey: process.env.STEAM_API_KEY,
     },
     (identifier, profile, done) => {
+      console.log('passport config:');
+      if (identifier) {
+        console.log(identifier);
+      }
+
+      if (profile) {
+        console.log(profile);
+      }
+
       // Creates user object, this will be stored in session
       const user = {
         steamID: profile.id,
         username: profile.displayName,
       };
+
+      console.log(`User: ${User}`);
 
       return done(null, user);
     },
