@@ -36,9 +36,9 @@ passport.use(
         username: profile.displayName,
       };
 
-      console.log(`User: ${User}`);
-      console.log(`steamID: ${User.steamID}`);
-      console.log(`username: ${User.username}`);
+      console.log(`User: ${user}`);
+      console.log(`steamID: ${user.steamID}`);
+      console.log(`username: ${user.username}`);
 
       return done(null, user);
     },
