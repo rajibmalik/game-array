@@ -33,13 +33,11 @@ passport.use(
 
 // Serialize user into the session
 passport.serializeUser(function (user, done) {
-  console.log('Serializing user:', user);
   done(null, user);
 });
 
 // Deserialize user from the session
 passport.deserializeUser(function (obj, done) {
-  console.log('Serializing user:', user);
   done(null, obj);
 });
 
