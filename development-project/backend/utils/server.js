@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('../config/passportConfig');
 const cors = require('cors');
+const MongoStore = require('connect-mongo');
 
 // Routers
 const steamAuthRouter = require('../routes/steamAuthRouter');
@@ -39,6 +40,7 @@ function createServer() {
       secret: process.env.SESSION_SECRET,
       resave: false,
       saveUninitialized: false,
+      store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
       cookie: {
         maxAge: 1 * 60 * 60 * 24 * 1000,
       },

@@ -10,7 +10,9 @@ const initiateSteamAuth = passport.authenticate('steam');
 // Upon successful authentication, redirects to '/account' page
 const steamAuthCallback = (req, res) => {
   passport.authenticate('steam', { failureRedirect: '/' })(req, res, () => {
-    console.log('Steam Authentication successful');
+    console.log('Steam auth successful');
+    console.log('User:', req.user);
+    console.log('Session:', req.session);
 
     // Redirect to the account route to initialise Steam API queries
     res.redirect('/account');
