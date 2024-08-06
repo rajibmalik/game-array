@@ -25,5 +25,5 @@ exports.createUser = async (req, res, next) => {
 
 // Renders account page with associated user data
 exports.redirectToAccount = (req, res) => {
-  res.redirect('https://game-array.vercel.app/library');
+  res.redirect('https:/game-array.vercel.app/library');
 };
