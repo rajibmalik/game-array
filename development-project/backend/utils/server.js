@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('../config/passportConfig');
 const cors = require('cors');
-const MongoStore = require('connect-mongo');
 
 // Routers
 const steamAuthRouter = require('../routes/steamAuthRouter');
@@ -28,8 +27,14 @@ function createServer() {
   // Enable CORS
   app.use(
     cors({
-      origin:
-        'https://game-array-front-end-git-main-rajibs-projects-72d37faa.vercel.app',
+      origin: function (origin, callback) {
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+          callback(null, true);
+        } else {
+          callback(new Error('Not allowed by CORS'));
+        }
+      },
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
       credentials: true,
     }),
   );
@@ -40,7 +45,6 @@ function createServer() {
       secret: process.env.SESSION_SECRET,
       resave: false,
       saveUninitialized: false,
-      store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
       cookie: {
         maxAge: 1 * 60 * 60 * 24 * 1000,
       },
