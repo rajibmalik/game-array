@@ -8,8 +8,9 @@ const router = express.Router();
 router.get('/', (req, res) => {
   console.log('Session route hit');
   console.log('Is authenticated:', req.isAuthenticated());
-  console.log('Session:', req.session);
+  console.log('Session:', JSON.stringify(req.session, null, 2));
   console.log('User:', req.user);
+  console.log('Cookies:', req.cookies);
   if (req.isAuthenticated()) {
     res.json({
       isAuthenticated: true,
