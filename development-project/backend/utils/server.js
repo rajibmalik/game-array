@@ -21,6 +21,7 @@ function createServer() {
     'http://localhost:5173',
     'https://game-array.onrender.com',
     'https://game-array.vercel.app',
+    'https://game-array-front-end-git-main-rajibs-projects-72d37faa.vercel.app/',
   ];
 
   // Enable CORS
