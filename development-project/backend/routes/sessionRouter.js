@@ -6,6 +6,10 @@ const router = express.Router();
 
 // If user is authenticated, returns session data
 router.get('/', (req, res) => {
+  console.log('Session route hit');
+  console.log('Is authenticated:', req.isAuthenticated());
+  console.log('Session:', req.session);
+  console.log('User:', req.user);
   if (req.isAuthenticated()) {
     res.json({
       isAuthenticated: true,
@@ -15,7 +19,6 @@ router.get('/', (req, res) => {
     res.status(401).json({
       isAuthenticated: false,
       message: 'User is not authenticated',
-      // user: req.user,
     });
   }
 });

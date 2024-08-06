@@ -27,14 +27,8 @@ function createServer() {
   // Enable CORS
   app.use(
     cors({
-      origin: function (origin, callback) {
-        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-          callback(null, true);
-        } else {
-          callback(new Error('Not allowed by CORS'));
-        }
-      },
-      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+      origin:
+        'https://game-array-front-end-git-main-rajibs-projects-72d37faa.vercel.app',
       credentials: true,
     }),
   );
@@ -44,7 +38,7 @@ function createServer() {
     session({
       secret: process.env.SESSION_SECRET,
       resave: false,
-      saveUninitialized: true,
+      saveUninitialized: false,
       cookie: {
         maxAge: 1 * 60 * 60 * 24 * 1000,
       },
