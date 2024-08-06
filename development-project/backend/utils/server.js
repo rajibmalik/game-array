@@ -50,6 +50,7 @@ function createServer() {
       cookie: {
         maxAge: 1 * 60 * 60 * 24 * 1000,
         sameSite: 'none', // Required for cross-site cookie
+        secure: true,
       },
     }),
   );
